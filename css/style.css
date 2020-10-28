@@ -1,0 +1,131 @@
+/* Univeral Style */
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+.letter {
+  letter-spacing: 8px;
+}
+
+/* Navbar */
+
+.navbar-brand {
+  font-size: 25px !important;
+  font-weight: bold !important;
+}
+.nav-link {
+  font-size: 18px !important;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid blue;
+  transition: 0.2s ease-in;
+}
+
+.icons {
+  width: 60px;
+}
+
+#skills .fab {
+  text-align: center;
+}
+
+/* About Me */
+
+#about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: rgb(236, 233, 233);
+}
+
+#about .image {
+  display: none;
+  margin-bottom: 30px;
+}
+#about .image img {
+  width: 60%;
+  border-radius: 5px;
+}
+
+/* skills */
+
+#skills {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: #000;
+}
+#skills .card {
+  width: 100%;
+  height: 100% !important;
+  padding: 20px !important;
+  background-color: #555 !important;
+}
+#skills .card-body {
+  transition: transform 0.2s ease-in;
+}
+#skills .card-body:hover {
+  cursor: pointer;
+  transform: translateY(-15px);
+}
+#skills .card-body span {
+  font-size: 3em;
+  padding-left: 40%;
+}
+
+#skills .card-text {
+  font-size: 19px;
+  font-weight: 400;
+  color: white;
+}
+
+#skills h2 {
+  color: white;
+}
+
+/* Projects */
+#projects {
+  padding-top: 100px;
+}
+
+#projects .card img {
+  filter: grayscale(100%);
+}
+
+#projects .card img:hover {
+  filter: grayscale(0%);
+  transition: 0.1s ease-in;
+}
+
+/* Contact */
+#contact {
+  padding-top: 60px;
+}
+
+/* footer */
+
+#footer .fab {
+  margin: 20px;
+}
+
+#footer {
+  padding: 30px;
+  background-color: #000;
+}
+
+@media screen and (max-width: 992px) {
+  #skills .card-body span {
+    padding-left: 20%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #about .image {
+    display: block;
+  }
+
+  #skills .card-body span {
+    padding-left: 45%;
+  }
+}

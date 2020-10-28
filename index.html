@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Front-End Developer</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Bootstrap Css -->
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.css"> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+
+
+
+    <style>
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+
+        .page-loading.active>.page-loading-inner {
+            opacity: 1;
+        }
+
+        .page-loading-inner>span {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #737491;
+        }
+
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #766df4;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Page loading scripts-->
+    <script>
+        (function () {
+            window.onload = function () {
+                var preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function () {
+                    preloader.remove();
+                }, 4000);
+            };
+        })();
+
+    </script>
+</head>
+
+<body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+    </div>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sub Zero</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">   
+                    <i class="fa fa-navicon" style="color: #007bff; font-size:28px;"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="home">
+        <!-- Hero-->
+        <section class="position-relative bg-faded-primary pt-7 pb-5 pb-md-6 pb-lg-7 overflow-hidden">
+            <div class="container pt-4 pt-md-5 pt-lg-0">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 text-center text-lg-left">
+                        <h1 class="mb-3 font-weight-bold">Designer & Front-end Developer</h1>
+                        <h4 class="font-size-lg text-muted mb-4">I design and code beautifully simple things, and I love what I do.</h4>
+                        <a href="#" class="btn btn-outline-primary">Say Hello</a>
+                    </div>
+                    <div class="col-lg-7 pt-lg-3">
+                        <div class="position-relative">
+                            <div class="cs-frame-browser-body">
+                                <div
+                                    data-carousel-label="&lt;i class=&quot;fe-calendar&quot;&gt;&lt;/i&gt;&lt;span&gt;Team Scheduling&lt;/span&gt;">
+                                    <img class="rounded" src="./Illustrations/3 SCENE.svg" alt="Screenshot" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about">
+            <div class="container">
+                <h2 class="text-center mb-4 letter">About Me</h2>
+                <div class="row">
+                    <col-md-10 class="col-md-12 offset-1 col-sm-12 col-xs-12 offset-xl-0 text-center">
+                        <div class="image">
+                            <img src="./images/profile_img.jpg" alt="" srcset="" class="rounded">
+                        </div>
+                        <h1 class="mb-3 text-center">Hello! I Am John Doe</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus quae aliquam alias exercitationem tenetur magni, consequuntur maiores facilis ducimus necessitatibus inventore et itaque, expedita perferendis deleniti illo eius dolorem! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, alias culpa minima ipsam nemo quis doloremque neque voluptatem. Exercitationem, cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis voluptate similique aperiam cum aspernatur excepturi aliquid totam facere deleniti.</p>
+                        <a href="./docs/resume.docx" class="btn btn-outline-primary resumeBtn">View Resume</a>
+                    </col-md-10>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Set -->
+        <section id="skills">
+            <div class="container-fluid">
+                <h2 class="text-center mb-4 letter">Skillset</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: Tomato;">
+                                        <i class="fab fa-html5 " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">HTML 5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(229, 255, 0);">
+                                        <i class="fab fa-css3 " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">CSS 3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: yellow;">
+                                        <i class="fab fa-js " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">JavaScript</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: blue;">
+                                        <i class="fab fa-react " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">React</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: purple;">
+                                        <i class="fab fa-php " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">Php</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(255, 166, 0);">
+                                        <i class="fab fa-java " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">Java</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: blue;">
+                                        <i class="devicon-cplusplus-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">C++</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: blue;">
+                                        <i class="devicon-c-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: green;">
+                                        <i class="fab fa-envira " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">MongoDB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span style="color: black;">
+                                        <i class="fab fa-github " aria-hidden="true" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">Github</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(1, 18, 92);">
+                                        <i class="devicon-jquery-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">JQuery</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(8, 113, 235);">
+                                        <i class="devicon-photoshop-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">Photoshop</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(212, 81, 5);">
+                                        <i class="devicon-illustrator-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">Illustrator</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(40, 212, 5);">
+                                        <i class="devicon-django-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">Django</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(40, 212, 5);">
+                                        <i class="devicon-ruby-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">SEO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span
+                                        style="color: rgb(5, 129, 212);">
+                                        <i class="devicon-go-plain" class="icons"></i>
+                                    </span>
+                                    <p class="card-text text-center">Go</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="text-center m-2 letter">Projects</h2>
+                <p class="lead text-center font-weight-bold">Recent projects I have worked on.</p>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12 mt-4">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/apple-clean-containers-205316.jpg" alt="">
+                            <div class="card-body bg-light">
+                                <a href="#"><h5 class="card-title text-center">Project One</h5></a>
+                                <p class="card-text text-center">A failover cluster is a set of computer. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 mt-4">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/adult-biology-chemical-chemist-356040.jpg" alt="">
+                            <div class="card-body bg-light">
+                                <a href="#"><h5 class="card-title text-center">Project Two</h5></a>
+                                <p class="card-text text-center">A failover cluster is a set of computer. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 mt-4">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/alejandro-escamilla-N7XodRrbzS0-unsplash.jpg"
+                                alt="">
+                            <div class="card-body bg-light">
+                                <a href="#"><h5 class="card-title text-center">Project Three</h5></a>
+                                <p class="card-text text-center">A failover cluster is a set of computer. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 mt-4">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/apple-cellphone-colors-1779487.jpg" alt="">
+                            <div class="card-body bg-light">
+                                <a href="#"><h5 class="card-title text-center">Project Four</h5></a>
+                                <p class="card-text text-center">A failover cluster is a set of computer. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 mt-4">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/apple-devices-books-business-coffee-572056.jpg"
+                                alt="">
+                            <div class="card-body bg-light">
+                                <a href="#"><h5 class="card-title text-center">Project Five</h5></a>
+                                <p class="card-text text-center">A failover cluster is a set of computer. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 mt-4">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/blue-close-up-computer-keyboard-265631.jpg" alt="">
+                            <div class="card-body bg-light">
+                                <a href="#"><h5 class="card-title text-center">Project Six</h5></a>
+                                <p class="card-text text-center">A failover cluster is a set of computer. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <a href="#" class="btn btn-outline-primary m-5">See More On Github</a>
+                </div>
+            </div>
+        </section>
+
+        <!--  -->
+        <section id="contact">
+            <div class="container m-5">
+                <h2 class="text-center letter mb-5">Leave me a Message</h2>
+                <div class="row">
+                    <div class="col-md-7">
+                        <img src="./Illustrations/10 SCENE.svg" alt="">
+                    </div>
+                    <div class="col-md-5 mt-5">
+                        <form>
+                            <div class="form-group">
+                                <!-- <label for="name">Name</label> -->
+                                <input type="text" class="form-control" id="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="email">Email address</label> -->
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="message">Message</label> -->
+                                <textarea class="form-control" id="message" rows="4" placeholder="Message" style="resize: none;" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-md btn-block">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="socail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <section id="footer">
+            <div class="container">
+                <span style="font-size: 2em;">
+                    <center>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </center>
+                </span>
+                <center>
+                    <p class="font-size-sm text-center mb-0"><span class="text-light opacity-50">© All rights reserved. Made by </span><a class="nav-link-style nav-link-light" href="#" target="_blank" rel="noopener">Duminsani Lesley Zulu</a></p>
+                </center>
+            </div>
+        </section>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
